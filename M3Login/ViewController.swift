@@ -14,14 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func pressBtn(_ sender: UIButton) {
-        if (idInput.text == "NiccoS" && passInput.text == "1234")
+        
+        let id = idInput.text ?? ""
+        let password = idInput.text ?? ""
+        
+        guard id.isEmpty || password.isEmpty else
         {
-            resultLabel.text = "Login Successful"
+            resultLabel.text = "Please input id and password"
+            return
         }
-        else
-        {
-            resultLabel.text = "Login Failed"
-        }
+        
+        let successful = id == "NiccoS" && password == "1234"
+        
+        resultLabel.text = successful ? "Login Successful" : "Login Failed"
         
         idInput.text = ""
         passInput.text = ""
