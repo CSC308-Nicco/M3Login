@@ -13,14 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var passInput: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-    @IBAction func pressBtn(_ sender: UIButton) {
-        
-        let id = idInput.text ?? ""
-        let password = idInput.text ?? ""
-        
-        guard id.isEmpty || password.isEmpty else
+    @IBAction func pressBtn(_ sender: UIButton)
+    {
+        guard let id = idInput.text, let password = passInput.text, !id.isEmpty, !password.isEmpty else
         {
-            resultLabel.text = "Please input id and password"
+            showAlert(message: "Please input id and password")
             return
         }
         
@@ -33,11 +30,23 @@ class ViewController: UIViewController {
     
     }
     
+    func showAlert(message: String)
+    {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        idInput.becomeFirstResponder()
     }
 
 

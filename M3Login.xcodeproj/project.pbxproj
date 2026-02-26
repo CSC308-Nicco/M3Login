@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		45498B062F32557D00A120DF /* M3Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M3Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C61A502F50AE15005FE808 /* M6Initializer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = M6Initializer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +46,7 @@
 		45498AFD2F32557D00A120DF = {
 			isa = PBXGroup;
 			children = (
+				45C61A502F50AE15005FE808 /* M6Initializer.playground */,
 				45498B082F32557D00A120DF /* M3Login */,
 				45498B072F32557D00A120DF /* Products */,
 			);
